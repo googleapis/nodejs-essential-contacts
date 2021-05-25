@@ -20,7 +20,8 @@
 const essentialcontacts = require('@google-cloud/essentialcontacts');
 
 function main() {
-  const essentialContactsServiceClient = new essentialcontacts.EssentialContactsServiceClient();
+  const essentialContactsServiceClient =
+    new essentialcontacts.EssentialContactsServiceClient();
 }
 
 main();
