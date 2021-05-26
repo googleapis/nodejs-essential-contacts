@@ -16,12 +16,10 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-/* eslint-disable node/no-missing-require, no-unused-vars */
-const essentialcontacts = require('@google-cloud/essentialcontacts');
-
-function main() {
-  const essentialContactsServiceClient =
-    new essentialcontacts.EssentialContactsServiceClient();
-}
-
-main();
+import * as v1 from './v1';
+const EssentialContactsServiceClient = v1.EssentialContactsServiceClient;
+type EssentialContactsServiceClient = v1.EssentialContactsServiceClient;
+export {v1, EssentialContactsServiceClient};
+export default {v1, EssentialContactsServiceClient};
+import * as protos from '../protos/protos';
+export {protos};
