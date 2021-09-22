@@ -390,6 +390,10 @@ export class EssentialContactsServiceClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.createContact(request);
+   *
+   * @example <caption>include:samples/generated/v1/essential_contacts_service.create_contact.js</caption>
+   * region_tag:essentialcontacts_create_contact_sample
+   *
    */
   createContact(
     request?: protos.google.cloud.essentialcontacts.v1.ICreateContactRequest,
@@ -493,6 +497,10 @@ export class EssentialContactsServiceClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.updateContact(request);
+   *
+   * @example <caption>include:samples/generated/v1/essential_contacts_service.update_contact.js</caption>
+   * region_tag:essentialcontacts_update_contact_sample
+   *
    */
   updateContact(
     request?: protos.google.cloud.essentialcontacts.v1.IUpdateContactRequest,
@@ -590,6 +598,10 @@ export class EssentialContactsServiceClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.getContact(request);
+   *
+   * @example <caption>include:samples/generated/v1/essential_contacts_service.get_contact.js</caption>
+   * region_tag:essentialcontacts_get_contact_sample
+   *
    */
   getContact(
     request?: protos.google.cloud.essentialcontacts.v1.IGetContactRequest,
@@ -687,6 +699,10 @@ export class EssentialContactsServiceClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.deleteContact(request);
+   *
+   * @example <caption>include:samples/generated/v1/essential_contacts_service.delete_contact.js</caption>
+   * region_tag:essentialcontacts_delete_contact_sample
+   *
    */
   deleteContact(
     request?: protos.google.cloud.essentialcontacts.v1.IDeleteContactRequest,
@@ -797,6 +813,10 @@ export class EssentialContactsServiceClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.sendTestMessage(request);
+   *
+   * @example <caption>include:samples/generated/v1/essential_contacts_service.send_test_message.js</caption>
+   * region_tag:essentialcontacts_send_test_message_sample
+   *
    */
   sendTestMessage(
     request?: protos.google.cloud.essentialcontacts.v1.ISendTestMessageRequest,
@@ -907,6 +927,10 @@ export class EssentialContactsServiceClient {
    *   Please see the
    *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
    *   for more details and examples.
+   *
+   * @example <caption>include:samples/generated/v1/essential_contacts_service.list_contacts.js</caption>
+   * region_tag:essentialcontacts_list_contacts_sample
+   *
    */
   listContacts(
     request?: protos.google.cloud.essentialcontacts.v1.IListContactsRequest,
@@ -981,6 +1005,10 @@ export class EssentialContactsServiceClient {
    *   Please see the
    *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
    *   for more details and examples.
+   *
+   * @example <caption>include:samples/generated/v1/essential_contacts_service.list_contacts.js</caption>
+   * region_tag:essentialcontacts_list_contacts_sample
+   *
    */
   listContactsStream(
     request?: protos.google.cloud.essentialcontacts.v1.IListContactsRequest,
@@ -994,7 +1022,8 @@ export class EssentialContactsServiceClient {
       gax.routingHeader.fromParams({
         parent: request.parent || '',
       });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listContacts'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listContacts.createStream(
       this.innerApiCalls.listContacts as gax.GaxCall,
@@ -1038,6 +1067,10 @@ export class EssentialContactsServiceClient {
    * for await (const response of iterable) {
    *   // process response
    * }
+   *
+   * @example <caption>include:samples/generated/v1/essential_contacts_service.list_contacts.js</caption>
+   * region_tag:essentialcontacts_list_contacts_sample
+   *
    */
   listContactsAsync(
     request?: protos.google.cloud.essentialcontacts.v1.IListContactsRequest,
@@ -1052,7 +1085,8 @@ export class EssentialContactsServiceClient {
         parent: request.parent || '',
       });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listContacts'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listContacts.asyncIterate(
       this.innerApiCalls['listContacts'] as GaxCall,
@@ -1128,6 +1162,10 @@ export class EssentialContactsServiceClient {
    *   Please see the
    *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
    *   for more details and examples.
+   *
+   * @example <caption>include:samples/generated/v1/essential_contacts_service.compute_contacts.js</caption>
+   * region_tag:essentialcontacts_compute_contacts_sample
+   *
    */
   computeContacts(
     request?: protos.google.cloud.essentialcontacts.v1.IComputeContactsRequest,
@@ -1206,6 +1244,10 @@ export class EssentialContactsServiceClient {
    *   Please see the
    *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
    *   for more details and examples.
+   *
+   * @example <caption>include:samples/generated/v1/essential_contacts_service.compute_contacts.js</caption>
+   * region_tag:essentialcontacts_compute_contacts_sample
+   *
    */
   computeContactsStream(
     request?: protos.google.cloud.essentialcontacts.v1.IComputeContactsRequest,
@@ -1219,7 +1261,8 @@ export class EssentialContactsServiceClient {
       gax.routingHeader.fromParams({
         parent: request.parent || '',
       });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['computeContacts'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.computeContacts.createStream(
       this.innerApiCalls.computeContacts as gax.GaxCall,
@@ -1267,6 +1310,10 @@ export class EssentialContactsServiceClient {
    * for await (const response of iterable) {
    *   // process response
    * }
+   *
+   * @example <caption>include:samples/generated/v1/essential_contacts_service.compute_contacts.js</caption>
+   * region_tag:essentialcontacts_compute_contacts_sample
+   *
    */
   computeContactsAsync(
     request?: protos.google.cloud.essentialcontacts.v1.IComputeContactsRequest,
@@ -1281,7 +1328,8 @@ export class EssentialContactsServiceClient {
         parent: request.parent || '',
       });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['computeContacts'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.computeContacts.asyncIterate(
       this.innerApiCalls['computeContacts'] as GaxCall,

@@ -12,7 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
 function main(contacts, resource, notificationCategory) {
@@ -42,7 +41,8 @@ function main(contacts, resource, notificationCategory) {
   // const notificationCategory = ''
 
   // Imports the Essentialcontacts library
-  const {EssentialContactsServiceClient} = require('@google-cloud/essential-contacts').v1;
+  const {EssentialContactsServiceClient} =
+    require('@google-cloud/essential-contacts').v1;
 
   // Instantiates a client
   const essentialcontactsClient = new EssentialContactsServiceClient();

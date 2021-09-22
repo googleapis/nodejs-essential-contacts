@@ -12,41 +12,46 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(name) {
-  // [START essentialcontacts_delete_contact_sample]
+function main(parent, contact) {
+  // [START essentialcontacts_create_contact_sample]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The name of the contact to delete.
-   *  Format: organizations/{organization_id}/contacts/{contact_id},
-   *  folders/{folder_id}/contacts/{contact_id} or
-   *  projects/{project_id}/contacts/{contact_id}
+   *  Required. The resource to save this contact for.
+   *  Format: organizations/{organization_id}, folders/{folder_id} or
+   *  projects/{project_id}
    */
-  // const name = 'abc123'
+  // const parent = 'abc123'
+  /**
+   *  Required. The contact to create. Must specify an email address and language
+   *  tag.
+   */
+  // const contact = ''
 
   // Imports the Essentialcontacts library
-  const {EssentialContactsServiceClient} = require('@google-cloud/essential-contacts').v1;
+  const {EssentialContactsServiceClient} =
+    require('@google-cloud/essential-contacts').v1;
 
   // Instantiates a client
   const essentialcontactsClient = new EssentialContactsServiceClient();
 
-  async function deleteContact() {
+  async function createContact() {
     // Construct request
     const request = {
-      name,
+      parent,
+      contact,
     };
 
     // Run request
-    const response = await essentialcontactsClient.deleteContact(request);
+    const response = await essentialcontactsClient.createContact(request);
     console.log(response);
   }
 
-  deleteContact();
-  // [END essentialcontacts_delete_contact_sample]
+  createContact();
+  // [END essentialcontacts_create_contact_sample]
 }
 
 process.on('unhandledRejection', err => {

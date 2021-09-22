@@ -12,26 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
 function main(parent) {
-  // [START essentialcontacts_compute_contacts_sample]
+  // [START essentialcontacts_list_contacts_sample]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The name of the resource to compute contacts for.
-   *  Format: organizations/{organization_id},
-   *  folders/{folder_id} or projects/{project_id}
+   *  Required. The parent resource name.
+   *  Format: organizations/{organization_id}, folders/{folder_id} or
+   *  projects/{project_id}
    */
   // const parent = 'abc123'
-  /**
-   *  The categories of notifications to compute contacts for. If ALL is included
-   *  in this list, contacts subscribed to any notification category will be
-   *  returned.
-   */
-  // const notificationCategories = 1234
   /**
    *  Optional. The maximum number of results to return from this request.
    *  Non-positive values are ignored. The presence of `next_page_token` in the
@@ -48,26 +41,27 @@ function main(parent) {
   // const pageToken = 'abc123'
 
   // Imports the Essentialcontacts library
-  const {EssentialContactsServiceClient} = require('@google-cloud/essential-contacts').v1;
+  const {EssentialContactsServiceClient} =
+    require('@google-cloud/essential-contacts').v1;
 
   // Instantiates a client
   const essentialcontactsClient = new EssentialContactsServiceClient();
 
-  async function computeContacts() {
+  async function listContacts() {
     // Construct request
     const request = {
       parent,
     };
 
     // Run request
-    const iterable = await essentialcontactsClient.computeContactsAsync(request);
+    const iterable = await essentialcontactsClient.listContactsAsync(request);
     for await (const response of iterable) {
-        console.log(response);
+      console.log(response);
     }
   }
 
-  computeContacts();
-  // [END essentialcontacts_compute_contacts_sample]
+  listContacts();
+  // [END essentialcontacts_list_contacts_sample]
 }
 
 process.on('unhandledRejection', err => {
