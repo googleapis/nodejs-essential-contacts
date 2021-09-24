@@ -12,41 +12,45 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(name) {
-  // [START essentialcontacts_v1_generated_EssentialContactsService_GetContact_async]
+function main(contact) {
+  // [START essentialcontacts_v1_generated_EssentialContactsService_UpdateContact_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The name of the contact to retrieve.
-   *  Format: organizations/{organization_id}/contacts/{contact_id},
-   *  folders/{folder_id}/contacts/{contact_id} or
-   *  projects/{project_id}/contacts/{contact_id}
+   *  Required. The contact resource to replace the existing saved contact. Note:
+   *  the email address of the contact cannot be modified.
    */
-  // const name = 'abc123'
+  // const contact = ''
+  /**
+   *  Optional. The update mask applied to the resource. For the `FieldMask`
+   *  definition, see
+   *  https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+   */
+  // const updateMask = ''
 
   // Imports the Essentialcontacts library
-  const {EssentialContactsServiceClient} = require('@google-cloud/essential-contacts').v1;
+  const {EssentialContactsServiceClient} =
+    require('@google-cloud/essential-contacts').v1;
 
   // Instantiates a client
   const essentialcontactsClient = new EssentialContactsServiceClient();
 
-  async function getContact() {
+  async function updateContact() {
     // Construct request
     const request = {
-      name,
+      contact,
     };
 
     // Run request
-    const response = await essentialcontactsClient.getContact(request);
+    const response = await essentialcontactsClient.updateContact(request);
     console.log(response);
   }
 
-  getContact();
-  // [END essentialcontacts_v1_generated_EssentialContactsService_GetContact_async]
+  updateContact();
+  // [END essentialcontacts_v1_generated_EssentialContactsService_UpdateContact_async]
 }
 
 process.on('unhandledRejection', err => {

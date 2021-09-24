@@ -994,7 +994,8 @@ export class EssentialContactsServiceClient {
       gax.routingHeader.fromParams({
         parent: request.parent || '',
       });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listContacts'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listContacts.createStream(
       this.innerApiCalls.listContacts as gax.GaxCall,
@@ -1052,7 +1053,8 @@ export class EssentialContactsServiceClient {
         parent: request.parent || '',
       });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listContacts'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listContacts.asyncIterate(
       this.innerApiCalls['listContacts'] as GaxCall,
@@ -1219,7 +1221,8 @@ export class EssentialContactsServiceClient {
       gax.routingHeader.fromParams({
         parent: request.parent || '',
       });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['computeContacts'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.computeContacts.createStream(
       this.innerApiCalls.computeContacts as gax.GaxCall,
@@ -1281,7 +1284,8 @@ export class EssentialContactsServiceClient {
         parent: request.parent || '',
       });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['computeContacts'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.computeContacts.asyncIterate(
       this.innerApiCalls['computeContacts'] as GaxCall,

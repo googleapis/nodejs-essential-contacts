@@ -12,45 +12,46 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(contact) {
-  // [START essentialcontacts_v1_generated_EssentialContactsService_UpdateContact_async]
+function main(parent, contact) {
+  // [START essentialcontacts_v1_generated_EssentialContactsService_CreateContact_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The contact resource to replace the existing saved contact. Note:
-   *  the email address of the contact cannot be modified.
+   *  Required. The resource to save this contact for.
+   *  Format: organizations/{organization_id}, folders/{folder_id} or
+   *  projects/{project_id}
+   */
+  // const parent = 'abc123'
+  /**
+   *  Required. The contact to create. Must specify an email address and language
+   *  tag.
    */
   // const contact = ''
-  /**
-   *  Optional. The update mask applied to the resource. For the `FieldMask`
-   *  definition, see
-   *  https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-   */
-  // const updateMask = ''
 
   // Imports the Essentialcontacts library
-  const {EssentialContactsServiceClient} = require('@google-cloud/essential-contacts').v1;
+  const {EssentialContactsServiceClient} =
+    require('@google-cloud/essential-contacts').v1;
 
   // Instantiates a client
   const essentialcontactsClient = new EssentialContactsServiceClient();
 
-  async function updateContact() {
+  async function createContact() {
     // Construct request
     const request = {
+      parent,
       contact,
     };
 
     // Run request
-    const response = await essentialcontactsClient.updateContact(request);
+    const response = await essentialcontactsClient.createContact(request);
     console.log(response);
   }
 
-  updateContact();
-  // [END essentialcontacts_v1_generated_EssentialContactsService_UpdateContact_async]
+  createContact();
+  // [END essentialcontacts_v1_generated_EssentialContactsService_CreateContact_async]
 }
 
 process.on('unhandledRejection', err => {

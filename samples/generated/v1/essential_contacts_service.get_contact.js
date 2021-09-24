@@ -12,16 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
 function main(name) {
-  // [START essentialcontacts_v1_generated_EssentialContactsService_DeleteContact_async]
+  // [START essentialcontacts_v1_generated_EssentialContactsService_GetContact_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The name of the contact to delete.
+   *  Required. The name of the contact to retrieve.
    *  Format: organizations/{organization_id}/contacts/{contact_id},
    *  folders/{folder_id}/contacts/{contact_id} or
    *  projects/{project_id}/contacts/{contact_id}
@@ -29,24 +28,25 @@ function main(name) {
   // const name = 'abc123'
 
   // Imports the Essentialcontacts library
-  const {EssentialContactsServiceClient} = require('@google-cloud/essential-contacts').v1;
+  const {EssentialContactsServiceClient} =
+    require('@google-cloud/essential-contacts').v1;
 
   // Instantiates a client
   const essentialcontactsClient = new EssentialContactsServiceClient();
 
-  async function deleteContact() {
+  async function getContact() {
     // Construct request
     const request = {
       name,
     };
 
     // Run request
-    const response = await essentialcontactsClient.deleteContact(request);
+    const response = await essentialcontactsClient.getContact(request);
     console.log(response);
   }
 
-  deleteContact();
-  // [END essentialcontacts_v1_generated_EssentialContactsService_DeleteContact_async]
+  getContact();
+  // [END essentialcontacts_v1_generated_EssentialContactsService_GetContact_async]
 }
 
 process.on('unhandledRejection', err => {

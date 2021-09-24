@@ -12,46 +12,56 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(parent, contact) {
-  // [START essentialcontacts_v1_generated_EssentialContactsService_CreateContact_async]
+function main(parent) {
+  // [START essentialcontacts_v1_generated_EssentialContactsService_ListContacts_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The resource to save this contact for.
+   *  Required. The parent resource name.
    *  Format: organizations/{organization_id}, folders/{folder_id} or
    *  projects/{project_id}
    */
   // const parent = 'abc123'
   /**
-   *  Required. The contact to create. Must specify an email address and language
-   *  tag.
+   *  Optional. The maximum number of results to return from this request.
+   *  Non-positive values are ignored. The presence of `next_page_token` in the
+   *  response indicates that more results might be available.
+   *  If not specified, the default page_size is 100.
    */
-  // const contact = ''
+  // const pageSize = 1234
+  /**
+   *  Optional. If present, retrieves the next batch of results from the
+   *  preceding call to this method. `page_token` must be the value of
+   *  `next_page_token` from the previous response. The values of other method
+   *  parameters should be identical to those in the previous call.
+   */
+  // const pageToken = 'abc123'
 
   // Imports the Essentialcontacts library
-  const {EssentialContactsServiceClient} = require('@google-cloud/essential-contacts').v1;
+  const {EssentialContactsServiceClient} =
+    require('@google-cloud/essential-contacts').v1;
 
   // Instantiates a client
   const essentialcontactsClient = new EssentialContactsServiceClient();
 
-  async function createContact() {
+  async function listContacts() {
     // Construct request
     const request = {
       parent,
-      contact,
     };
 
     // Run request
-    const response = await essentialcontactsClient.createContact(request);
-    console.log(response);
+    const iterable = await essentialcontactsClient.listContactsAsync(request);
+    for await (const response of iterable) {
+      console.log(response);
+    }
   }
 
-  createContact();
-  // [END essentialcontacts_v1_generated_EssentialContactsService_CreateContact_async]
+  listContacts();
+  // [END essentialcontacts_v1_generated_EssentialContactsService_ListContacts_async]
 }
 
 process.on('unhandledRejection', err => {
