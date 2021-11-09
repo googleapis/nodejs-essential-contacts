@@ -12,45 +12,41 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(contact) {
-  // [START essentialcontacts_v1_generated_EssentialContactsService_UpdateContact_async]
+function main(name) {
+  // [START essentialcontacts_v1_generated_EssentialContactsService_DeleteContact_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The contact resource to replace the existing saved contact. Note:
-   *  the email address of the contact cannot be modified.
+   *  Required. The name of the contact to delete.
+   *  Format: organizations/{organization_id}/contacts/{contact_id},
+   *  folders/{folder_id}/contacts/{contact_id} or
+   *  projects/{project_id}/contacts/{contact_id}
    */
-  // const contact = {}
-  /**
-   *  Optional. The update mask applied to the resource. For the `FieldMask`
-   *  definition, see
-   *  https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-   */
-  // const updateMask = {}
+  // const name = 'abc123'
 
   // Imports the Essentialcontacts library
-  const {EssentialContactsServiceClient} = require('@google-cloud/essential-contacts').v1;
+  const {EssentialContactsServiceClient} =
+    require('@google-cloud/essential-contacts').v1;
 
   // Instantiates a client
   const essentialcontactsClient = new EssentialContactsServiceClient();
 
-  async function callUpdateContact() {
+  async function callDeleteContact() {
     // Construct request
     const request = {
-      contact,
+      name,
     };
 
     // Run request
-    const response = await essentialcontactsClient.updateContact(request);
+    const response = await essentialcontactsClient.deleteContact(request);
     console.log(response);
   }
 
-  callUpdateContact();
-  // [END essentialcontacts_v1_generated_EssentialContactsService_UpdateContact_async]
+  callDeleteContact();
+  // [END essentialcontacts_v1_generated_EssentialContactsService_DeleteContact_async]
 }
 
 process.on('unhandledRejection', err => {

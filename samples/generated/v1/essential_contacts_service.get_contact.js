@@ -12,46 +12,41 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(parent, contact) {
-  // [START essentialcontacts_v1_generated_EssentialContactsService_CreateContact_async]
+function main(name) {
+  // [START essentialcontacts_v1_generated_EssentialContactsService_GetContact_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The resource to save this contact for.
-   *  Format: organizations/{organization_id}, folders/{folder_id} or
-   *  projects/{project_id}
+   *  Required. The name of the contact to retrieve.
+   *  Format: organizations/{organization_id}/contacts/{contact_id},
+   *  folders/{folder_id}/contacts/{contact_id} or
+   *  projects/{project_id}/contacts/{contact_id}
    */
-  // const parent = 'abc123'
-  /**
-   *  Required. The contact to create. Must specify an email address and language
-   *  tag.
-   */
-  // const contact = {}
+  // const name = 'abc123'
 
   // Imports the Essentialcontacts library
-  const {EssentialContactsServiceClient} = require('@google-cloud/essential-contacts').v1;
+  const {EssentialContactsServiceClient} =
+    require('@google-cloud/essential-contacts').v1;
 
   // Instantiates a client
   const essentialcontactsClient = new EssentialContactsServiceClient();
 
-  async function callCreateContact() {
+  async function callGetContact() {
     // Construct request
     const request = {
-      parent,
-      contact,
+      name,
     };
 
     // Run request
-    const response = await essentialcontactsClient.createContact(request);
+    const response = await essentialcontactsClient.getContact(request);
     console.log(response);
   }
 
-  callCreateContact();
-  // [END essentialcontacts_v1_generated_EssentialContactsService_CreateContact_async]
+  callGetContact();
+  // [END essentialcontacts_v1_generated_EssentialContactsService_GetContact_async]
 }
 
 process.on('unhandledRejection', err => {
