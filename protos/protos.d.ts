@@ -168,49 +168,49 @@ export namespace google {
                 namespace EssentialContactsService {
 
                     /**
-                     * Callback as used by {@link google.cloud.essentialcontacts.v1.EssentialContactsService|createContact}.
+                     * Callback as used by {@link google.cloud.essentialcontacts.v1.EssentialContactsService#createContact}.
                      * @param error Error, if any
                      * @param [response] Contact
                      */
                     type CreateContactCallback = (error: (Error|null), response?: google.cloud.essentialcontacts.v1.Contact) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.essentialcontacts.v1.EssentialContactsService|updateContact}.
+                     * Callback as used by {@link google.cloud.essentialcontacts.v1.EssentialContactsService#updateContact}.
                      * @param error Error, if any
                      * @param [response] Contact
                      */
                     type UpdateContactCallback = (error: (Error|null), response?: google.cloud.essentialcontacts.v1.Contact) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.essentialcontacts.v1.EssentialContactsService|listContacts}.
+                     * Callback as used by {@link google.cloud.essentialcontacts.v1.EssentialContactsService#listContacts}.
                      * @param error Error, if any
                      * @param [response] ListContactsResponse
                      */
                     type ListContactsCallback = (error: (Error|null), response?: google.cloud.essentialcontacts.v1.ListContactsResponse) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.essentialcontacts.v1.EssentialContactsService|getContact}.
+                     * Callback as used by {@link google.cloud.essentialcontacts.v1.EssentialContactsService#getContact}.
                      * @param error Error, if any
                      * @param [response] Contact
                      */
                     type GetContactCallback = (error: (Error|null), response?: google.cloud.essentialcontacts.v1.Contact) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.essentialcontacts.v1.EssentialContactsService|deleteContact}.
+                     * Callback as used by {@link google.cloud.essentialcontacts.v1.EssentialContactsService#deleteContact}.
                      * @param error Error, if any
                      * @param [response] Empty
                      */
                     type DeleteContactCallback = (error: (Error|null), response?: google.protobuf.Empty) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.essentialcontacts.v1.EssentialContactsService|computeContacts}.
+                     * Callback as used by {@link google.cloud.essentialcontacts.v1.EssentialContactsService#computeContacts}.
                      * @param error Error, if any
                      * @param [response] ComputeContactsResponse
                      */
                     type ComputeContactsCallback = (error: (Error|null), response?: google.cloud.essentialcontacts.v1.ComputeContactsResponse) => void;
 
                     /**
-                     * Callback as used by {@link google.cloud.essentialcontacts.v1.EssentialContactsService|sendTestMessage}.
+                     * Callback as used by {@link google.cloud.essentialcontacts.v1.EssentialContactsService#sendTestMessage}.
                      * @param error Error, if any
                      * @param [response] Empty
                      */
@@ -3663,9 +3663,6 @@ export namespace google {
             /** FieldOptions lazy */
             lazy?: (boolean|null);
 
-            /** FieldOptions unverifiedLazy */
-            unverifiedLazy?: (boolean|null);
-
             /** FieldOptions deprecated */
             deprecated?: (boolean|null);
 
@@ -3702,9 +3699,6 @@ export namespace google {
 
             /** FieldOptions lazy. */
             public lazy: boolean;
-
-            /** FieldOptions unverifiedLazy. */
-            public unverifiedLazy: boolean;
 
             /** FieldOptions deprecated. */
             public deprecated: boolean;
